@@ -42,15 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Locker.cs" />
-    <Compile Include="LockerDatabaseDataSet.cs">
-      <DependentUpon>LockerDatabaseDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="LockerDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LockerDatabaseDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,17 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="LockerDatabaseDataSet.xsc">
-      <DependentUpon>LockerDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LockerDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LockerDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LockerDatabaseDataSet.xss">
-      <DependentUpon>LockerDatabaseDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
