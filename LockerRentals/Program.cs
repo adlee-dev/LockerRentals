@@ -13,7 +13,6 @@ namespace LockerRentals
             Console.WriteLine("hello world");
             Locker bobLocker = new Locker(2001);
             Console.WriteLine("done");
-            Console.WriteLine("testabc");
         }
     }
 }
