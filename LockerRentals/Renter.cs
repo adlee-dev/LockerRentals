@@ -41,6 +41,7 @@ namespace LockerRentals
             }
         }
 
+        // constructor for existing renter (aka patron)
         public Renter(string patronID, string barcode, DateTime expirationDate, bool isActive, string lastName, string firstName, string middleName)
         {
             PatronID = patronID;

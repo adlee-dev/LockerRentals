@@ -6,48 +6,48 @@ using System.Threading.Tasks;
 
 namespace LockerRentals
 {
-    class Locker
+    public enum LockerStatus
     {
-        private int locker;
-        private string position;
-        private string floor;
-        private string combo;
-        private string status;
+        Available,
+        Rented,
+        Maintenance,
+        OutOfService
+    }
 
-        public Locker(int locker)
+    public class Locker
+    {
+        public int LockerNumber { get; }
+        public string Floor { get; }
+        public string Combo { get; }
+        public int SerialNumber { get; }
+        public LockerStatus Status { get; }
+
+        public string Position
         {
-            this.locker = locker;
-            this.position = LockerPosition();
-
-            Console.WriteLine(locker);
-            Console.WriteLine(position);
-
+            get
+            {
+                switch ((LockerNumber - 1) % 4)
+                {
+                    case 0:
+                        return "t";
+                    case 1:
+                        return "mt";
+                    case 2:
+                        return "mb";
+                    default:
+                        return "b";
+                }
+            }
         }
 
-        private string LockerPosition()
+        // constructor for existing locker
+        public Locker(int lockerNumber, string floor, string combo, int serialNumber, LockerStatus status)
         {
-            string position = null;
-            int remainder;
-
-            remainder = (locker - 1) % 4;
-
-            switch (remainder)
-            {
-                case 0:
-                    position = "t";
-                    break;
-                case 1:
-                    position = "mt";
-                    break;
-                case 2:
-                    position = "mb";
-                    break;
-                case 3:
-                    position = "b";
-                    break;
-            }
-
-            return position;
+            LockerNumber = lockerNumber;
+            Floor = floor;
+            Combo = combo;
+            SerialNumber = serialNumber;
+            Status = status;
         }
     }
 }

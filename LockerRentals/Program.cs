@@ -11,8 +11,8 @@ namespace LockerRentals
         static void Main(string[] args)
         {
             Console.WriteLine("hello world");
-            Locker bobLocker = new Locker(2001);
-            Console.WriteLine("done");
+            //Locker myLocker = new Locker(2001, "2", "01-03-04");
+
         }
     }
 }
