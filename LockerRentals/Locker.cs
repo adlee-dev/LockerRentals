@@ -16,11 +16,15 @@ namespace LockerRentals
 
     public class Locker
     {
+        private int combo1;
+        private int combo2;
+        private int combo3;
+        private string comboSetting;
+
         public int LockerNumber { get; }
         public string Floor { get; }
-        public string Combo { get; }
         public int SerialNumber { get; }
-        public LockerStatus Status { get; }
+        public LockerStatus Status { get; set; }
 
         public string Position
         {
@@ -41,13 +45,21 @@ namespace LockerRentals
         }
 
         // constructor for existing locker
-        public Locker(int lockerNumber, string floor, string combo, int serialNumber, LockerStatus status)
+        public Locker(int lockerNumber, string floor, int combo1, int combo2, int combo3, string comboSetting, int serialNumber, LockerStatus status)
         {
             LockerNumber = lockerNumber;
             Floor = floor;
-            Combo = combo;
+            this.combo1 = combo1;
+            this.combo2 = combo2;
+            this.combo3 = combo3;
+            this.comboSetting = comboSetting;
             SerialNumber = serialNumber;
             Status = status;
+        }
+
+        public void ChangeCombo(string newSetting)
+        {
+            this.comboSetting = newSetting;
         }
     }
 }

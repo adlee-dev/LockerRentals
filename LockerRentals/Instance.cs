@@ -8,24 +8,29 @@ namespace LockerRentals
 {
     public class Instance
     {
+        public int Id { get; }
         public DateTime EndDate { get; }
         public DateTime InstanceDateTime { get; }
         public bool IsCanceled { get; set; }
         
         // constructor for new instance
-        public Instance(DateTime endDate)
+        public Instance(int id, DateTime endDate)
         {
+            Id = id;
             EndDate = endDate;
             InstanceDateTime = DateTime.Now;
             IsCanceled = false;
         }
 
         // constructor for existing instance
-        public Instance(DateTime endDate, DateTime instanceDateTime, bool isCanceled)
+        public Instance(int id, DateTime endDate, DateTime instanceDateTime, bool isCanceled)
         {
+            Id = id;
             EndDate = endDate;
             InstanceDateTime = instanceDateTime;
             IsCanceled = isCanceled;
         }
+
+
     }
 }
