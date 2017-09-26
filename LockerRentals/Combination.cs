@@ -10,7 +10,7 @@ namespace LockerRentals
 {
     public static class Combination
     {
-        public static Tuple<int,int,int> GetCombo(Tuple<int,int,int> baseCombo, string comboSetting)
+        public static List<int> GetCombo(List<int> baseCombo, string comboSetting)
         {
             int offset = 0;
 
@@ -37,13 +37,26 @@ namespace LockerRentals
                     break;
             }
 
-            Tuple<int,int,int> rawCombo = Tuple.Create(baseCombo.Item1 + offset, baseCombo.Item2 + offset, baseCombo.Item3 + offset);
+            IEnumerable<int> rawCombo = baseCombo.Select(item => item + offset);
             return NormalizeCombo(rawCombo);
         }
 
-        private static Tuple<int,int,int> NormalizeCombo(Tuple<int,int,int> rawCombo)
+        private static List<int> NormalizeCombo(IEnumerable<int> rawCombo)
         {
+            List<int> output = new List<int>();
 
+            foreach (int value in rawCombo) {
+                if (value >= 40)
+                {
+                    output.Add(value - 40);
+                }
+                else
+                {
+                    output.Add(value);
+                }
+            }
+
+            return output;
         }
     }
 }
